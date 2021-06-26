@@ -1,5 +1,5 @@
 # Affinity11
-A windows 11 compatibility checker.
+A Windows 11 compatibility checker.
 
 ![icon](https://i.imgur.com/uS1HhtV.png)
 
