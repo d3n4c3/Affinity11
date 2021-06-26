@@ -7,4 +7,4 @@ A Windows 11 compatibility checker.
 
 # Download
 
-[Download Affinity11 here](https://github.com/mag-nif-i-cent/Affinity11/releases/download/first/Affinity11.exe)
+[Download Affinity11 here](https://github.com/mag-nif-i-cent/Affinity11/releases/download/first/Affinity11.exe).
