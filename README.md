@@ -12,7 +12,7 @@ A windows 11 compatibility checker.
 
 ![icon](https://i.imgur.com/uS1HhtV.png)
 
-![screenshot](https://i.imgur.com/HT5LTYg.png)
+![screenshot](https://i.imgur.com/ahYUE73.png)
 
 # Download
 
