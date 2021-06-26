@@ -1,7 +1,7 @@
 # Affinity11
 A windows 11 compatibility checker.
 
-# Full Source release, this is the first version.
+# Source release.
 
 # Things to do
 **Add information readouts for help if compatibility issues found.**
