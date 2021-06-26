@@ -65,6 +65,10 @@ namespace Affinity11
             this.hddbad = new System.Windows.Forms.PictureBox();
             this.tpmbad = new System.Windows.Forms.PictureBox();
             this.coresbad = new System.Windows.Forms.PictureBox();
+            this.lbl_directx = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.directbad = new System.Windows.Forms.PictureBox();
+            this.directgood = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
@@ -84,6 +88,8 @@ namespace Affinity11
             ((System.ComponentModel.ISupportInitialize)(this.hddbad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tpmbad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.coresbad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.directbad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.directgood)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -92,7 +98,7 @@ namespace Affinity11
             this.panel1.Controls.Add(this.pictureBox17);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.pictureBox16);
-            this.panel1.Location = new System.Drawing.Point(-1, 506);
+            this.panel1.Location = new System.Drawing.Point(-1, 579);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(691, 75);
             this.panel1.TabIndex = 0;
@@ -270,6 +276,7 @@ namespace Affinity11
             this.lbl_tpm.Size = new System.Drawing.Size(75, 21);
             this.lbl_tpm.TabIndex = 29;
             this.lbl_tpm.Text = "Loading...";
+            this.lbl_tpm.Click += new System.EventHandler(this.lbl_tpm_Click);
             // 
             // label16
             // 
@@ -443,12 +450,55 @@ namespace Affinity11
             this.coresbad.TabIndex = 31;
             this.coresbad.TabStop = false;
             // 
+            // lbl_directx
+            // 
+            this.lbl_directx.AutoSize = true;
+            this.lbl_directx.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_directx.Location = new System.Drawing.Point(48, 539);
+            this.lbl_directx.Name = "lbl_directx";
+            this.lbl_directx.Size = new System.Drawing.Size(75, 21);
+            this.lbl_directx.TabIndex = 35;
+            this.lbl_directx.Text = "Loading...";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(16, 506);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 21);
+            this.label8.TabIndex = 32;
+            this.label8.Text = "DirectX";
+            // 
+            // directbad
+            // 
+            this.directbad.Image = global::Affinity11.Properties.Resources.x;
+            this.directbad.Location = new System.Drawing.Point(20, 536);
+            this.directbad.Name = "directbad";
+            this.directbad.Size = new System.Drawing.Size(25, 25);
+            this.directbad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.directbad.TabIndex = 34;
+            this.directbad.TabStop = false;
+            // 
+            // directgood
+            // 
+            this.directgood.Image = global::Affinity11.Properties.Resources.check;
+            this.directgood.Location = new System.Drawing.Point(20, 536);
+            this.directgood.Name = "directgood";
+            this.directgood.Size = new System.Drawing.Size(25, 25);
+            this.directgood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.directgood.TabIndex = 33;
+            this.directgood.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(690, 580);
+            this.ClientSize = new System.Drawing.Size(690, 653);
+            this.Controls.Add(this.lbl_directx);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.directgood);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.lbl_tpm);
             this.Controls.Add(this.lbl_storage);
@@ -481,6 +531,7 @@ namespace Affinity11
             this.Controls.Add(this.hddgood);
             this.Controls.Add(this.tpmbad);
             this.Controls.Add(this.tpmgood);
+            this.Controls.Add(this.directbad);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
@@ -510,6 +561,8 @@ namespace Affinity11
             ((System.ComponentModel.ISupportInitialize)(this.hddbad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tpmbad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.coresbad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.directbad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.directgood)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -552,6 +605,10 @@ namespace Affinity11
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.PictureBox pictureBox17;
         private System.Windows.Forms.PictureBox coresbad;
+        private System.Windows.Forms.Label lbl_directx;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox directbad;
+        private System.Windows.Forms.PictureBox directgood;
     }
 }
 

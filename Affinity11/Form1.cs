@@ -9,7 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Management;
-
+using System.Diagnostics;
+using System.IO;
+using System.Threading;
+using System.Xml;
+using Microsoft.Win32;
 
 namespace Affinity11
 {
@@ -18,6 +22,39 @@ namespace Affinity11
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
         public const int ERROR_INVALID_FUNCTION = 1;
+
+        [Guid("7D0F462F-4064-4862-BC7F-933E5058C10F")]
+        [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+        public interface IDxDiagContainer
+        {
+            void EnumChildContainerNames(uint dwIndex, string pwszContainer, uint cchContainer);
+            void EnumPropNames(uint dwIndex, string pwszPropName, uint cchPropName);
+            void GetChildContainer(string pwszContainer, out IDxDiagContainer ppInstance);
+            void GetNumberOfChildContainers(out uint pdwCount);
+            void GetNumberOfProps(out uint pdwCount);
+            void GetProp(string pwszPropName, out object pvarProp);
+        }
+
+        [ComImport]
+        [Guid("A65B8071-3BFE-4213-9A5B-491DA4461CA7")]
+        public class DxDiagProvider { }
+
+        [Guid("9C6B4CB0-23F8-49CC-A3ED-45A55000A6D2")]
+        [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+        public interface IDxDiagProvider
+        {
+            void Initialize(ref DXDIAG_INIT_PARAMS pParams);
+            void GetRootContainer(out IDxDiagContainer ppInstance);
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct DXDIAG_INIT_PARAMS
+        {
+            public int dwSize;
+            public uint dwDxDiagHeaderVersion;
+            public bool bAllowWHQLChecks;
+            public IntPtr pReserved;
+        };
 
         [DllImport("kernel32.dll",
             EntryPoint = "GetFirmwareEnvironmentVariableA",
@@ -82,6 +119,53 @@ namespace Affinity11
             }
             return clockSpeed;
         }
+
+        private static T GetProperty<T>(IDxDiagContainer container, string propName)
+        {
+            container.GetProp(propName, out object variant);
+            return (T)Convert.ChangeType(variant, typeof(T));
+        }
+
+        public static int CheckDirectXMajorVersion()
+        {
+            IDxDiagProvider provider = null;
+            IDxDiagContainer rootContainer = null;
+            IDxDiagContainer systemInfoContainer = null;
+            try
+            {
+                // Instantiate and initialize the provider.
+                provider = (IDxDiagProvider)new DxDiagProvider();
+                DXDIAG_INIT_PARAMS initParams = new DXDIAG_INIT_PARAMS
+                {
+                    dwSize = Marshal.SizeOf<DXDIAG_INIT_PARAMS>(),
+                    dwDxDiagHeaderVersion = 111
+                };
+                provider.Initialize(ref initParams);
+
+                // Get the Root\SystemInfo container.
+                provider.GetRootContainer(out rootContainer);
+                rootContainer.GetChildContainer("DxDiag_SystemInfo", out systemInfoContainer);
+
+                // Read the DirectX version info.
+                int versionMajor = GetProperty<int>(systemInfoContainer, "dwDirectXVersionMajor");
+                int versionMinor = GetProperty<int>(systemInfoContainer, "dwDirectXVersionMinor");
+                string versionLetter = GetProperty<string>(systemInfoContainer, "szDirectXVersionLetter");
+                bool isDebug = GetProperty<bool>(systemInfoContainer, "bDebug");
+                return versionMajor;
+            }
+            finally
+            {
+                if (provider != null)
+                    Marshal.ReleaseComObject(provider);
+                if (rootContainer != null)
+                    Marshal.ReleaseComObject(rootContainer);
+                if (systemInfoContainer != null)
+                    Marshal.ReleaseComObject(systemInfoContainer);
+            }
+
+        }
+
+
 
 
         public Form1()
@@ -218,24 +302,26 @@ namespace Affinity11
                 }
 
             }
+            lbl_directx.Text = "DirectX " + CheckDirectXMajorVersion();
+            int directXver = CheckDirectXMajorVersion();
+            if (directXver < 12)
+            {
+                directgood.Visible = false;
+                directbad.Visible = true;
+            }
+            else
+            {
+                directgood.Visible = true;
+                directbad.Visible = false;
+            }
 
-            //create a management scope object
             ManagementScope scope = new ManagementScope("\\\\.\\ROOT\\CIMV2\\Security\\MicrosoftTpm");
-
-            //create object query
             ObjectQuery query = new ObjectQuery("SELECT * FROM Win32_Tpm");
-
-            //create object searcher
             ManagementObjectSearcher searcher =
                                     new ManagementObjectSearcher(scope, query);
-
-            //get a collection of WMI objects
             ManagementObjectCollection queryCollection = searcher.Get();
-
-            //enumerate the collection.
             foreach (ManagementObject m in queryCollection)
             {
-                // access properties of the WMI object
                 string tpmver = m["SpecVersion"].ToString();
                 string[] splitted = tpmver.Split(',');
                 lbl_tpm.Text = "TPM " + splitted[0];
@@ -290,6 +376,11 @@ namespace Affinity11
         }
 
         private void lbl_coresnthreads_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_tpm_Click(object sender, EventArgs e)
         {
 
         }
