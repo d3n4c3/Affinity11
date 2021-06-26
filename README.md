@@ -1,9 +1,5 @@
 # Affinity11
-A windows 11 compatibility checker.
-
-# Things to do
-
-**Add readout at bottom for *compat good* or *compat bad*.**
+A Windows 11 compatibility checker.
 
 ![icon](https://i.imgur.com/uS1HhtV.png)
 
@@ -11,4 +7,4 @@ A windows 11 compatibility checker.
 
 # Download
 
-[Download exe here](https://github.com/mag-nif-i-cent/Affinity11/raw/master/Affinity11.exe)
+[Download Affinity11 here](https://github.com/mag-nif-i-cent/Affinity11/releases/download/first/Affinity11.exe).
