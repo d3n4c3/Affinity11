@@ -173,19 +173,21 @@ namespace Affinity11
             lbl_screen.Text = "";
             screengood.Visible = true;
             screenbad.Visible = false;
+            int counter = 0;
             foreach (var item in new System.Management.ManagementObjectSearcher("\\root\\wmi","SELECT * FROM WmiMonitorBasicDisplayParams").Get())
             {
+                counter = counter + 1;
                 double width = (byte)item["MaxHorizontalImageSize"] / 2.54;
                 double height = (byte)item["MaxVerticalImageSize"] / 2.54;
                 diagonal = Math.Sqrt(width * width + height * height);
-                lbl_screen.Text = lbl_screen.Text + diagonal.ToString("0.00") + " inch ";
+                lbl_screen.Text = lbl_screen.Text + counter + ". " + diagonal.ToString("0.00") + " inch ";
                 if (diagonal <= 9)
                 {
                     screengood.Visible = false;
                     screenbad.Visible = true;
                 }
             }
-            lbl_screen.Text = lbl_screen.Text + "diagonal.";
+
 
             if (isUEFI())
             {
