@@ -1,8 +1,6 @@
 # Affinity11
 A windows 11 compatibility checker.
 
-# Source release
-
 # Things to do
 
 **Add readout at bottom for *compat good* or *compat bad*.**
