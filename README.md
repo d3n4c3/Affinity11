@@ -1,9 +1,9 @@
 # Affinity11
 A windows 11 compatibility checker.
 
-#Full Source release, this is the first version.
+# Full Source release, this is the first version.
 
-#Things to do
+# Things to do
 **add information readouts for help if compatibility issues found.**
 **add cpu version checks for hard check on cpu support list.**
 
