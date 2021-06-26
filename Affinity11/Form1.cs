@@ -1,19 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Management;
-using System.Diagnostics;
 using System.IO;
-using System.Threading;
-using System.Xml;
-using Microsoft.Win32;
+using System.Reflection;
+using System.Collections.Generic;
 
 namespace Affinity11
 {
@@ -225,19 +216,48 @@ namespace Affinity11
             {
                 lbl_cpu.Text = item["Name"].ToString();
 
-                //Need to add hard compatibily check here.
+                var amdbytes = Properties.Resources.amdsupport;
+                string amdsupported = System.Text.Encoding.UTF8.GetString(amdbytes);
 
-                if (coreCount > 1 && x > 1000)
+                var intelbytes = Properties.Resources.intelsupport;
+                string intelsupported = System.Text.Encoding.UTF8.GetString(intelbytes);
+
+                string supportedCPUs = amdsupported + "\n" + intelsupported;
+
+                string myCPU = lbl_cpu.Text.ToUpper();
+
+                bool FoundCPU = false;
+
+                foreach (var cpu in supportedCPUs.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries))
+
+                    if (myCPU.Contains(cpu.ToUpper()))
+                    {
+                        FoundCPU = true;
+                    }
+
+                if (FoundCPU)
                 {
-
                     cpugood.Visible = true;
                     cpubad.Visible = false;
+                    cpuinfo.Visible = false;
                 }
                 else
                 {
-                    cpugood.Visible = false;
-                    cpubad.Visible = true;
+                    if (coreCount > 1 && x > 1000)
+                    {
+                        cpuinfo.Visible = true;
+                        cpugood.Visible = false;
+                        cpubad.Visible = false;
+
+                    }
+                    else
+                    {
+                        cpugood.Visible = false;
+                        cpubad.Visible = true;
+                        cpuinfo.Visible = false;
+                    }
                 }
+
             }
 
             foreach (var item in new System.Management.ManagementObjectSearcher("select * from Win32_DiskPartition").Get())
@@ -330,21 +350,29 @@ namespace Affinity11
                 {
                     tpmgood.Visible = true;
                     tpmbad.Visible = false;
+                    tpminfo.Visible = false;
                     return;
                 }
                 if (splitted[0].Contains("1.2"))
                 {
-                    tpmgood.Visible = true;
+                    tpminfo.Visible = true;
+                    tpmgood.Visible = false;
                     tpmbad.Visible = false;
                     return;
                 }
 
                 tpmgood.Visible = false;
+                tpminfo.Visible = false;
                 tpmbad.Visible = true;
 
             }
 
 
+        }
+
+        private void close_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(-1);
         }
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
@@ -365,23 +393,84 @@ namespace Affinity11
             }
         }
 
-        private void pictureBox17_Click(object sender, EventArgs e)
-        {
-            Environment.Exit(-1);
-        }
-
         private void label16_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void lbl_coresnthreads_Click(object sender, EventArgs e)
+        private void cpuinfo_MouseHover(object sender, EventArgs e)
         {
+                ToolTip tt = new ToolTip();
+                tt.SetToolTip(this.cpuinfo, "Your CPU meets the soft requirements, it's just not listed on the offical list of supported processors.");
+        }
+
+        private void tpminfo_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.tpminfo, "Your TPM version meets the soft requirements. However, the recommended TPM version is 2.0.");
+        }
+
+        private void close_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.close, "Close Affinity11");
+        }
+
+        private void bootbad_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.bootbad, "Your system needs to support a UEFI boot mode, right now your system is booting using Legacy. This doesn't necessarily mean that your system doesn't support it. Check your motherboard, system manual or bios for more information.");
+        }
+
+        private void cpubad_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.cpubad, "Your CPU doesn't meet the specification requirements, see individual info about frequency or cores below.");
 
         }
 
-        private void lbl_tpm_Click(object sender, EventArgs e)
+        private void freqbad_MouseHover(object sender, EventArgs e)
         {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.freqbad, "Your CPU frequency doesn't meet the minimum requirements for Windows 11.");
+        }
+
+        private void coresbad_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.coresbad, "You don't have enough processing cores to run Windows 11.");
+
+        }
+
+        private void partbad_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.partbad, "Your system needs to support GPT partition types, right now your system is booting using MBR. This doesn't necessarily mean that your system doesn't support it. Check your motherboard, system manual or bios for more information.");
+
+        }
+
+        private void rambad_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.rambad, "Your RAM does not meet the minimum requirements for Windows 11.");
+        }
+
+        private void hddbad_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.hddbad, "Your drive does not have enough capacity to run Windows 11.");
+        }
+
+        private void tpmbad_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.tpmbad, "Your TPM version is too low, or non-existent. This doesn't necessarily mean that your system doesn't support it. Check your motherboard, system manual, or bios for more information. See TPM or PPT.");
+        }
+
+        private void directbad_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.tpmbad, "Your DirectX version is too low. This doesn't necessarily mean that your system doesn't support higher versions. Check DXDIAG for more information.");
 
         }
     }

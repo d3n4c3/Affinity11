@@ -31,7 +31,7 @@ namespace Affinity11
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.close = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,53 +49,57 @@ namespace Affinity11
             this.lbl_storage = new System.Windows.Forms.Label();
             this.lbl_tpm = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.coresgood = new System.Windows.Forms.PictureBox();
-            this.freqgood = new System.Windows.Forms.PictureBox();
-            this.tpmgood = new System.Windows.Forms.PictureBox();
-            this.hddgood = new System.Windows.Forms.PictureBox();
-            this.ramgood = new System.Windows.Forms.PictureBox();
-            this.partgood = new System.Windows.Forms.PictureBox();
-            this.cpugood = new System.Windows.Forms.PictureBox();
-            this.bootbad = new System.Windows.Forms.PictureBox();
-            this.bootgood = new System.Windows.Forms.PictureBox();
-            this.cpubad = new System.Windows.Forms.PictureBox();
-            this.freqbad = new System.Windows.Forms.PictureBox();
-            this.partbad = new System.Windows.Forms.PictureBox();
-            this.rambad = new System.Windows.Forms.PictureBox();
-            this.hddbad = new System.Windows.Forms.PictureBox();
-            this.tpmbad = new System.Windows.Forms.PictureBox();
-            this.coresbad = new System.Windows.Forms.PictureBox();
             this.lbl_directx = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.cpuinfo = new System.Windows.Forms.PictureBox();
+            this.bootbad = new System.Windows.Forms.PictureBox();
+            this.freqbad = new System.Windows.Forms.PictureBox();
+            this.bootgood = new System.Windows.Forms.PictureBox();
+            this.freqgood = new System.Windows.Forms.PictureBox();
+            this.coresbad = new System.Windows.Forms.PictureBox();
+            this.coresgood = new System.Windows.Forms.PictureBox();
+            this.cpubad = new System.Windows.Forms.PictureBox();
+            this.cpugood = new System.Windows.Forms.PictureBox();
+            this.partbad = new System.Windows.Forms.PictureBox();
+            this.partgood = new System.Windows.Forms.PictureBox();
+            this.rambad = new System.Windows.Forms.PictureBox();
+            this.ramgood = new System.Windows.Forms.PictureBox();
+            this.hddbad = new System.Windows.Forms.PictureBox();
+            this.hddgood = new System.Windows.Forms.PictureBox();
+            this.tpmbad = new System.Windows.Forms.PictureBox();
+            this.tpmgood = new System.Windows.Forms.PictureBox();
             this.directbad = new System.Windows.Forms.PictureBox();
             this.directgood = new System.Windows.Forms.PictureBox();
+            this.tpminfo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.close)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coresgood)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.freqgood)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tpmgood)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hddgood)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ramgood)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.partgood)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cpugood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cpuinfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bootbad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bootgood)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cpubad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.freqbad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.partbad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rambad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hddbad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tpmbad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bootgood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.freqgood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.coresbad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coresgood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cpubad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cpugood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.partbad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.partgood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rambad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ramgood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hddbad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hddgood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tpmbad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tpmgood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.directbad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.directgood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tpminfo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.panel1.Controls.Add(this.pictureBox17);
+            this.panel1.Controls.Add(this.close);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.pictureBox16);
             this.panel1.Location = new System.Drawing.Point(-1, 579);
@@ -104,16 +108,17 @@ namespace Affinity11
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
-            // pictureBox17
+            // close
             // 
-            this.pictureBox17.Image = global::Affinity11.Properties.Resources.power1;
-            this.pictureBox17.Location = new System.Drawing.Point(645, 25);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox17.TabIndex = 33;
-            this.pictureBox17.TabStop = false;
-            this.pictureBox17.Click += new System.EventHandler(this.pictureBox17_Click);
+            this.close.Image = global::Affinity11.Properties.Resources.power1;
+            this.close.Location = new System.Drawing.Point(645, 25);
+            this.close.Name = "close";
+            this.close.Size = new System.Drawing.Size(25, 25);
+            this.close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.close.TabIndex = 33;
+            this.close.TabStop = false;
+            this.close.Click += new System.EventHandler(this.close_Click);
+            this.close.MouseHover += new System.EventHandler(this.close_MouseHover);
             // 
             // label17
             // 
@@ -230,12 +235,11 @@ namespace Affinity11
             // 
             this.lbl_coresnthreads.AutoSize = true;
             this.lbl_coresnthreads.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_coresnthreads.Location = new System.Drawing.Point(255, 165);
+            this.lbl_coresnthreads.Location = new System.Drawing.Point(271, 163);
             this.lbl_coresnthreads.Name = "lbl_coresnthreads";
             this.lbl_coresnthreads.Size = new System.Drawing.Size(75, 21);
             this.lbl_coresnthreads.TabIndex = 25;
             this.lbl_coresnthreads.Text = "Loading...";
-            this.lbl_coresnthreads.Click += new System.EventHandler(this.lbl_coresnthreads_Click);
             // 
             // lbl_part
             // 
@@ -271,12 +275,11 @@ namespace Affinity11
             // 
             this.lbl_tpm.AutoSize = true;
             this.lbl_tpm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tpm.Location = new System.Drawing.Point(47, 464);
+            this.lbl_tpm.Location = new System.Drawing.Point(47, 463);
             this.lbl_tpm.Name = "lbl_tpm";
             this.lbl_tpm.Size = new System.Drawing.Size(75, 21);
             this.lbl_tpm.TabIndex = 29;
             this.lbl_tpm.Text = "Loading...";
-            this.lbl_tpm.Click += new System.EventHandler(this.lbl_tpm_Click);
             // 
             // label16
             // 
@@ -289,166 +292,6 @@ namespace Affinity11
             this.label16.TabIndex = 30;
             this.label16.Text = "  _ ";
             this.label16.Click += new System.EventHandler(this.label16_Click);
-            // 
-            // coresgood
-            // 
-            this.coresgood.Image = global::Affinity11.Properties.Resources.check;
-            this.coresgood.Location = new System.Drawing.Point(227, 163);
-            this.coresgood.Name = "coresgood";
-            this.coresgood.Size = new System.Drawing.Size(25, 25);
-            this.coresgood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.coresgood.TabIndex = 24;
-            this.coresgood.TabStop = false;
-            // 
-            // freqgood
-            // 
-            this.freqgood.Image = global::Affinity11.Properties.Resources.check;
-            this.freqgood.Location = new System.Drawing.Point(20, 161);
-            this.freqgood.Name = "freqgood";
-            this.freqgood.Size = new System.Drawing.Size(25, 25);
-            this.freqgood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.freqgood.TabIndex = 21;
-            this.freqgood.TabStop = false;
-            // 
-            // tpmgood
-            // 
-            this.tpmgood.Image = global::Affinity11.Properties.Resources.check;
-            this.tpmgood.Location = new System.Drawing.Point(19, 461);
-            this.tpmgood.Name = "tpmgood";
-            this.tpmgood.Size = new System.Drawing.Size(25, 25);
-            this.tpmgood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tpmgood.TabIndex = 17;
-            this.tpmgood.TabStop = false;
-            // 
-            // hddgood
-            // 
-            this.hddgood.Image = global::Affinity11.Properties.Resources.check;
-            this.hddgood.Location = new System.Drawing.Point(19, 384);
-            this.hddgood.Name = "hddgood";
-            this.hddgood.Size = new System.Drawing.Size(25, 25);
-            this.hddgood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.hddgood.TabIndex = 14;
-            this.hddgood.TabStop = false;
-            // 
-            // ramgood
-            // 
-            this.ramgood.Image = global::Affinity11.Properties.Resources.check;
-            this.ramgood.Location = new System.Drawing.Point(19, 314);
-            this.ramgood.Name = "ramgood";
-            this.ramgood.Size = new System.Drawing.Size(25, 25);
-            this.ramgood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ramgood.TabIndex = 11;
-            this.ramgood.TabStop = false;
-            // 
-            // partgood
-            // 
-            this.partgood.Image = global::Affinity11.Properties.Resources.check;
-            this.partgood.Location = new System.Drawing.Point(19, 240);
-            this.partgood.Name = "partgood";
-            this.partgood.Size = new System.Drawing.Size(25, 25);
-            this.partgood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.partgood.TabIndex = 8;
-            this.partgood.TabStop = false;
-            // 
-            // cpugood
-            // 
-            this.cpugood.Image = global::Affinity11.Properties.Resources.check;
-            this.cpugood.Location = new System.Drawing.Point(20, 119);
-            this.cpugood.Name = "cpugood";
-            this.cpugood.Size = new System.Drawing.Size(25, 25);
-            this.cpugood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.cpugood.TabIndex = 5;
-            this.cpugood.TabStop = false;
-            // 
-            // bootbad
-            // 
-            this.bootbad.Image = global::Affinity11.Properties.Resources.x;
-            this.bootbad.Location = new System.Drawing.Point(19, 48);
-            this.bootbad.Name = "bootbad";
-            this.bootbad.Size = new System.Drawing.Size(25, 25);
-            this.bootbad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.bootbad.TabIndex = 3;
-            this.bootbad.TabStop = false;
-            // 
-            // bootgood
-            // 
-            this.bootgood.Image = global::Affinity11.Properties.Resources.check;
-            this.bootgood.Location = new System.Drawing.Point(19, 48);
-            this.bootgood.Name = "bootgood";
-            this.bootgood.Size = new System.Drawing.Size(25, 25);
-            this.bootgood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.bootgood.TabIndex = 2;
-            this.bootgood.TabStop = false;
-            // 
-            // cpubad
-            // 
-            this.cpubad.Image = global::Affinity11.Properties.Resources.x;
-            this.cpubad.Location = new System.Drawing.Point(20, 119);
-            this.cpubad.Name = "cpubad";
-            this.cpubad.Size = new System.Drawing.Size(25, 25);
-            this.cpubad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.cpubad.TabIndex = 6;
-            this.cpubad.TabStop = false;
-            // 
-            // freqbad
-            // 
-            this.freqbad.Image = global::Affinity11.Properties.Resources.x;
-            this.freqbad.Location = new System.Drawing.Point(20, 161);
-            this.freqbad.Name = "freqbad";
-            this.freqbad.Size = new System.Drawing.Size(25, 25);
-            this.freqbad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.freqbad.TabIndex = 23;
-            this.freqbad.TabStop = false;
-            // 
-            // partbad
-            // 
-            this.partbad.Image = global::Affinity11.Properties.Resources.x;
-            this.partbad.Location = new System.Drawing.Point(19, 240);
-            this.partbad.Name = "partbad";
-            this.partbad.Size = new System.Drawing.Size(25, 25);
-            this.partbad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.partbad.TabIndex = 9;
-            this.partbad.TabStop = false;
-            // 
-            // rambad
-            // 
-            this.rambad.Image = global::Affinity11.Properties.Resources.x;
-            this.rambad.Location = new System.Drawing.Point(19, 314);
-            this.rambad.Name = "rambad";
-            this.rambad.Size = new System.Drawing.Size(25, 25);
-            this.rambad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rambad.TabIndex = 12;
-            this.rambad.TabStop = false;
-            // 
-            // hddbad
-            // 
-            this.hddbad.Image = global::Affinity11.Properties.Resources.x;
-            this.hddbad.Location = new System.Drawing.Point(19, 384);
-            this.hddbad.Name = "hddbad";
-            this.hddbad.Size = new System.Drawing.Size(25, 25);
-            this.hddbad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.hddbad.TabIndex = 15;
-            this.hddbad.TabStop = false;
-            // 
-            // tpmbad
-            // 
-            this.tpmbad.Image = global::Affinity11.Properties.Resources.x;
-            this.tpmbad.Location = new System.Drawing.Point(19, 461);
-            this.tpmbad.Name = "tpmbad";
-            this.tpmbad.Size = new System.Drawing.Size(25, 25);
-            this.tpmbad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tpmbad.TabIndex = 18;
-            this.tpmbad.TabStop = false;
-            // 
-            // coresbad
-            // 
-            this.coresbad.Image = global::Affinity11.Properties.Resources.x;
-            this.coresbad.Location = new System.Drawing.Point(227, 163);
-            this.coresbad.Name = "coresbad";
-            this.coresbad.Size = new System.Drawing.Size(25, 25);
-            this.coresbad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.coresbad.TabIndex = 31;
-            this.coresbad.TabStop = false;
             // 
             // lbl_directx
             // 
@@ -470,6 +313,185 @@ namespace Affinity11
             this.label8.TabIndex = 32;
             this.label8.Text = "DirectX";
             // 
+            // cpuinfo
+            // 
+            this.cpuinfo.Image = global::Affinity11.Properties.Resources.info;
+            this.cpuinfo.Location = new System.Drawing.Point(20, 119);
+            this.cpuinfo.Name = "cpuinfo";
+            this.cpuinfo.Size = new System.Drawing.Size(25, 25);
+            this.cpuinfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.cpuinfo.TabIndex = 36;
+            this.cpuinfo.TabStop = false;
+            this.cpuinfo.MouseHover += new System.EventHandler(this.cpuinfo_MouseHover);
+            // 
+            // bootbad
+            // 
+            this.bootbad.Image = global::Affinity11.Properties.Resources.x;
+            this.bootbad.Location = new System.Drawing.Point(19, 48);
+            this.bootbad.Name = "bootbad";
+            this.bootbad.Size = new System.Drawing.Size(25, 25);
+            this.bootbad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.bootbad.TabIndex = 3;
+            this.bootbad.TabStop = false;
+            this.bootbad.MouseHover += new System.EventHandler(this.bootbad_MouseHover);
+            // 
+            // freqbad
+            // 
+            this.freqbad.Image = global::Affinity11.Properties.Resources.x;
+            this.freqbad.Location = new System.Drawing.Point(20, 161);
+            this.freqbad.Name = "freqbad";
+            this.freqbad.Size = new System.Drawing.Size(25, 25);
+            this.freqbad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.freqbad.TabIndex = 23;
+            this.freqbad.TabStop = false;
+            this.freqbad.MouseHover += new System.EventHandler(this.freqbad_MouseHover);
+            // 
+            // bootgood
+            // 
+            this.bootgood.Image = global::Affinity11.Properties.Resources.check;
+            this.bootgood.Location = new System.Drawing.Point(19, 48);
+            this.bootgood.Name = "bootgood";
+            this.bootgood.Size = new System.Drawing.Size(25, 25);
+            this.bootgood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.bootgood.TabIndex = 2;
+            this.bootgood.TabStop = false;
+            // 
+            // freqgood
+            // 
+            this.freqgood.Image = global::Affinity11.Properties.Resources.check;
+            this.freqgood.Location = new System.Drawing.Point(20, 161);
+            this.freqgood.Name = "freqgood";
+            this.freqgood.Size = new System.Drawing.Size(25, 25);
+            this.freqgood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.freqgood.TabIndex = 21;
+            this.freqgood.TabStop = false;
+            // 
+            // coresbad
+            // 
+            this.coresbad.Image = global::Affinity11.Properties.Resources.x;
+            this.coresbad.Location = new System.Drawing.Point(243, 161);
+            this.coresbad.Name = "coresbad";
+            this.coresbad.Size = new System.Drawing.Size(25, 25);
+            this.coresbad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.coresbad.TabIndex = 31;
+            this.coresbad.TabStop = false;
+            this.coresbad.MouseHover += new System.EventHandler(this.coresbad_MouseHover);
+            // 
+            // coresgood
+            // 
+            this.coresgood.Image = global::Affinity11.Properties.Resources.check;
+            this.coresgood.Location = new System.Drawing.Point(243, 161);
+            this.coresgood.Name = "coresgood";
+            this.coresgood.Size = new System.Drawing.Size(25, 25);
+            this.coresgood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.coresgood.TabIndex = 24;
+            this.coresgood.TabStop = false;
+            // 
+            // cpubad
+            // 
+            this.cpubad.Image = global::Affinity11.Properties.Resources.x;
+            this.cpubad.Location = new System.Drawing.Point(20, 119);
+            this.cpubad.Name = "cpubad";
+            this.cpubad.Size = new System.Drawing.Size(25, 25);
+            this.cpubad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.cpubad.TabIndex = 6;
+            this.cpubad.TabStop = false;
+            this.cpubad.MouseHover += new System.EventHandler(this.cpubad_MouseHover);
+            // 
+            // cpugood
+            // 
+            this.cpugood.Image = global::Affinity11.Properties.Resources.check;
+            this.cpugood.Location = new System.Drawing.Point(20, 119);
+            this.cpugood.Name = "cpugood";
+            this.cpugood.Size = new System.Drawing.Size(25, 25);
+            this.cpugood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.cpugood.TabIndex = 5;
+            this.cpugood.TabStop = false;
+            // 
+            // partbad
+            // 
+            this.partbad.Image = global::Affinity11.Properties.Resources.x;
+            this.partbad.Location = new System.Drawing.Point(19, 240);
+            this.partbad.Name = "partbad";
+            this.partbad.Size = new System.Drawing.Size(25, 25);
+            this.partbad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.partbad.TabIndex = 9;
+            this.partbad.TabStop = false;
+            this.partbad.MouseHover += new System.EventHandler(this.partbad_MouseHover);
+            // 
+            // partgood
+            // 
+            this.partgood.Image = global::Affinity11.Properties.Resources.check;
+            this.partgood.Location = new System.Drawing.Point(19, 240);
+            this.partgood.Name = "partgood";
+            this.partgood.Size = new System.Drawing.Size(25, 25);
+            this.partgood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.partgood.TabIndex = 8;
+            this.partgood.TabStop = false;
+            // 
+            // rambad
+            // 
+            this.rambad.Image = global::Affinity11.Properties.Resources.x;
+            this.rambad.Location = new System.Drawing.Point(19, 314);
+            this.rambad.Name = "rambad";
+            this.rambad.Size = new System.Drawing.Size(25, 25);
+            this.rambad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rambad.TabIndex = 12;
+            this.rambad.TabStop = false;
+            this.rambad.MouseHover += new System.EventHandler(this.rambad_MouseHover);
+            // 
+            // ramgood
+            // 
+            this.ramgood.Image = global::Affinity11.Properties.Resources.check;
+            this.ramgood.Location = new System.Drawing.Point(19, 314);
+            this.ramgood.Name = "ramgood";
+            this.ramgood.Size = new System.Drawing.Size(25, 25);
+            this.ramgood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ramgood.TabIndex = 11;
+            this.ramgood.TabStop = false;
+            // 
+            // hddbad
+            // 
+            this.hddbad.Image = global::Affinity11.Properties.Resources.x;
+            this.hddbad.Location = new System.Drawing.Point(19, 384);
+            this.hddbad.Name = "hddbad";
+            this.hddbad.Size = new System.Drawing.Size(25, 25);
+            this.hddbad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.hddbad.TabIndex = 15;
+            this.hddbad.TabStop = false;
+            this.hddbad.MouseHover += new System.EventHandler(this.hddbad_MouseHover);
+            // 
+            // hddgood
+            // 
+            this.hddgood.Image = global::Affinity11.Properties.Resources.check;
+            this.hddgood.Location = new System.Drawing.Point(19, 384);
+            this.hddgood.Name = "hddgood";
+            this.hddgood.Size = new System.Drawing.Size(25, 25);
+            this.hddgood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.hddgood.TabIndex = 14;
+            this.hddgood.TabStop = false;
+            // 
+            // tpmbad
+            // 
+            this.tpmbad.Image = global::Affinity11.Properties.Resources.x;
+            this.tpmbad.Location = new System.Drawing.Point(19, 461);
+            this.tpmbad.Name = "tpmbad";
+            this.tpmbad.Size = new System.Drawing.Size(25, 25);
+            this.tpmbad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tpmbad.TabIndex = 18;
+            this.tpmbad.TabStop = false;
+            this.tpmbad.MouseHover += new System.EventHandler(this.tpmbad_MouseHover);
+            // 
+            // tpmgood
+            // 
+            this.tpmgood.Image = global::Affinity11.Properties.Resources.check;
+            this.tpmgood.Location = new System.Drawing.Point(19, 461);
+            this.tpmgood.Name = "tpmgood";
+            this.tpmgood.Size = new System.Drawing.Size(25, 25);
+            this.tpmgood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tpmgood.TabIndex = 17;
+            this.tpmgood.TabStop = false;
+            // 
             // directbad
             // 
             this.directbad.Image = global::Affinity11.Properties.Resources.x;
@@ -479,6 +501,7 @@ namespace Affinity11
             this.directbad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.directbad.TabIndex = 34;
             this.directbad.TabStop = false;
+            this.directbad.MouseHover += new System.EventHandler(this.directbad_MouseHover);
             // 
             // directgood
             // 
@@ -490,6 +513,17 @@ namespace Affinity11
             this.directgood.TabIndex = 33;
             this.directgood.TabStop = false;
             // 
+            // tpminfo
+            // 
+            this.tpminfo.Image = global::Affinity11.Properties.Resources.info;
+            this.tpminfo.Location = new System.Drawing.Point(19, 461);
+            this.tpminfo.Name = "tpminfo";
+            this.tpminfo.Size = new System.Drawing.Size(25, 25);
+            this.tpminfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tpminfo.TabIndex = 37;
+            this.tpminfo.TabStop = false;
+            this.tpminfo.MouseHover += new System.EventHandler(this.tpminfo_MouseHover);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -498,7 +532,6 @@ namespace Affinity11
             this.ClientSize = new System.Drawing.Size(690, 653);
             this.Controls.Add(this.lbl_directx);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.directgood);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.lbl_tpm);
             this.Controls.Add(this.lbl_storage);
@@ -532,6 +565,9 @@ namespace Affinity11
             this.Controls.Add(this.tpmbad);
             this.Controls.Add(this.tpmgood);
             this.Controls.Add(this.directbad);
+            this.Controls.Add(this.directgood);
+            this.Controls.Add(this.cpuinfo);
+            this.Controls.Add(this.tpminfo);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
@@ -543,26 +579,28 @@ namespace Affinity11
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.close)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coresgood)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.freqgood)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tpmgood)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hddgood)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ramgood)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.partgood)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cpugood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cpuinfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bootbad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bootgood)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cpubad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.freqbad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.partbad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rambad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hddbad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tpmbad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bootgood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.freqgood)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.coresbad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coresgood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cpubad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cpugood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.partbad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.partgood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rambad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ramgood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hddbad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hddgood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tpmbad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tpmgood)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.directbad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.directgood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tpminfo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -603,12 +641,14 @@ namespace Affinity11
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.PictureBox pictureBox17;
+        private System.Windows.Forms.PictureBox close;
         private System.Windows.Forms.PictureBox coresbad;
         private System.Windows.Forms.Label lbl_directx;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox directbad;
         private System.Windows.Forms.PictureBox directgood;
+        private System.Windows.Forms.PictureBox cpuinfo;
+        private System.Windows.Forms.PictureBox tpminfo;
     }
 }
 
