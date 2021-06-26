@@ -2,9 +2,6 @@
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Management;
-using System.IO;
-using System.Reflection;
-using System.Collections.Generic;
 
 namespace Affinity11
 {
@@ -171,6 +168,25 @@ namespace Affinity11
             LoadingForm.Show();
 
             LoadingForm.StatusText = "Checking system requirements...";
+            int diagparsed = 0;
+            double diagonal = 0;
+            lbl_screen.Text = "";
+            screengood.Visible = true;
+            screenbad.Visible = false;
+            foreach (var item in new System.Management.ManagementObjectSearcher("\\root\\wmi","SELECT * FROM WmiMonitorBasicDisplayParams").Get())
+            {
+                double width = (byte)item["MaxHorizontalImageSize"] / 2.54;
+                double height = (byte)item["MaxVerticalImageSize"] / 2.54;
+                diagonal = Math.Sqrt(width * width + height * height);
+                lbl_screen.Text = lbl_screen.Text + diagonal.ToString("0.00") + " inch ";
+                if (diagonal <= 9)
+                {
+                    screengood.Visible = false;
+                    screenbad.Visible = true;
+                }
+            }
+            lbl_screen.Text = lbl_screen.Text + "diagonal.";
+
             if (isUEFI())
             {
                 lbl_type.Text = "UEFI";
@@ -482,7 +498,14 @@ namespace Affinity11
         private void directbad_MouseHover(object sender, EventArgs e)
         {
             ToolTip tt = new ToolTip();
-            tt.SetToolTip(this.tpmbad, "Your DirectX version is too low. This doesn't necessarily mean that your system doesn't support higher versions. Check DXDIAG for more information.");
+            tt.SetToolTip(this.directbad, "Your DirectX version is too low. This doesn't necessarily mean that your system doesn't support higher versions. Check DXDIAG for more information.");
+
+        }
+
+        private void screenbad_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.screenbad, "One or more of your monitors are too small to work on Windows 11.");
 
         }
     }

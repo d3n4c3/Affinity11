@@ -31,9 +31,7 @@ namespace Affinity11
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.close = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,7 +49,8 @@ namespace Affinity11
             this.label16 = new System.Windows.Forms.Label();
             this.lbl_directx = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.cpuinfo = new System.Windows.Forms.PictureBox();
+            this.close = new System.Windows.Forms.PictureBox();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.bootbad = new System.Windows.Forms.PictureBox();
             this.freqbad = new System.Windows.Forms.PictureBox();
             this.bootgood = new System.Windows.Forms.PictureBox();
@@ -70,11 +69,15 @@ namespace Affinity11
             this.tpmgood = new System.Windows.Forms.PictureBox();
             this.directbad = new System.Windows.Forms.PictureBox();
             this.directgood = new System.Windows.Forms.PictureBox();
+            this.cpuinfo = new System.Windows.Forms.PictureBox();
             this.tpminfo = new System.Windows.Forms.PictureBox();
+            this.lbl_screen = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.screenbad = new System.Windows.Forms.PictureBox();
+            this.screengood = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.close)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cpuinfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bootbad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.freqbad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bootgood)).BeginInit();
@@ -93,7 +96,10 @@ namespace Affinity11
             ((System.ComponentModel.ISupportInitialize)(this.tpmgood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.directbad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.directgood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cpuinfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tpminfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.screenbad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.screengood)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -108,18 +114,6 @@ namespace Affinity11
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
-            // close
-            // 
-            this.close.Image = global::Affinity11.Properties.Resources.power1;
-            this.close.Location = new System.Drawing.Point(645, 25);
-            this.close.Name = "close";
-            this.close.Size = new System.Drawing.Size(25, 25);
-            this.close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.close.TabIndex = 33;
-            this.close.TabStop = false;
-            this.close.Click += new System.EventHandler(this.close_Click);
-            this.close.MouseHover += new System.EventHandler(this.close_MouseHover);
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -130,16 +124,6 @@ namespace Affinity11
             this.label17.Size = new System.Drawing.Size(76, 21);
             this.label17.TabIndex = 32;
             this.label17.Text = "Affinity11";
-            // 
-            // pictureBox16
-            // 
-            this.pictureBox16.Image = global::Affinity11.Properties.Resources.Icon;
-            this.pictureBox16.Location = new System.Drawing.Point(12, 10);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox16.TabIndex = 31;
-            this.pictureBox16.TabStop = false;
             // 
             // label1
             // 
@@ -313,16 +297,27 @@ namespace Affinity11
             this.label8.TabIndex = 32;
             this.label8.Text = "DirectX";
             // 
-            // cpuinfo
+            // close
             // 
-            this.cpuinfo.Image = global::Affinity11.Properties.Resources.info;
-            this.cpuinfo.Location = new System.Drawing.Point(20, 119);
-            this.cpuinfo.Name = "cpuinfo";
-            this.cpuinfo.Size = new System.Drawing.Size(25, 25);
-            this.cpuinfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.cpuinfo.TabIndex = 36;
-            this.cpuinfo.TabStop = false;
-            this.cpuinfo.MouseHover += new System.EventHandler(this.cpuinfo_MouseHover);
+            this.close.Image = global::Affinity11.Properties.Resources.power1;
+            this.close.Location = new System.Drawing.Point(645, 25);
+            this.close.Name = "close";
+            this.close.Size = new System.Drawing.Size(25, 25);
+            this.close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.close.TabIndex = 33;
+            this.close.TabStop = false;
+            this.close.Click += new System.EventHandler(this.close_Click);
+            this.close.MouseHover += new System.EventHandler(this.close_MouseHover);
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.Image = global::Affinity11.Properties.Resources.Icon;
+            this.pictureBox16.Location = new System.Drawing.Point(12, 10);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox16.TabIndex = 31;
+            this.pictureBox16.TabStop = false;
             // 
             // bootbad
             // 
@@ -513,6 +508,17 @@ namespace Affinity11
             this.directgood.TabIndex = 33;
             this.directgood.TabStop = false;
             // 
+            // cpuinfo
+            // 
+            this.cpuinfo.Image = global::Affinity11.Properties.Resources.info;
+            this.cpuinfo.Location = new System.Drawing.Point(20, 119);
+            this.cpuinfo.Name = "cpuinfo";
+            this.cpuinfo.Size = new System.Drawing.Size(25, 25);
+            this.cpuinfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.cpuinfo.TabIndex = 36;
+            this.cpuinfo.TabStop = false;
+            this.cpuinfo.MouseHover += new System.EventHandler(this.cpuinfo_MouseHover);
+            // 
             // tpminfo
             // 
             this.tpminfo.Image = global::Affinity11.Properties.Resources.info;
@@ -524,12 +530,55 @@ namespace Affinity11
             this.tpminfo.TabStop = false;
             this.tpminfo.MouseHover += new System.EventHandler(this.tpminfo_MouseHover);
             // 
+            // lbl_screen
+            // 
+            this.lbl_screen.AutoSize = true;
+            this.lbl_screen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_screen.Location = new System.Drawing.Point(271, 50);
+            this.lbl_screen.Name = "lbl_screen";
+            this.lbl_screen.Size = new System.Drawing.Size(75, 21);
+            this.lbl_screen.TabIndex = 41;
+            this.lbl_screen.Text = "Loading...";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(239, 15);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(107, 21);
+            this.label9.TabIndex = 38;
+            this.label9.Text = "Monitor Info";
+            // 
+            // screenbad
+            // 
+            this.screenbad.Image = global::Affinity11.Properties.Resources.x;
+            this.screenbad.Location = new System.Drawing.Point(243, 48);
+            this.screenbad.Name = "screenbad";
+            this.screenbad.Size = new System.Drawing.Size(25, 25);
+            this.screenbad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.screenbad.TabIndex = 40;
+            this.screenbad.TabStop = false;
+            this.screenbad.MouseHover += new System.EventHandler(this.screenbad_MouseHover);
+            // 
+            // screengood
+            // 
+            this.screengood.Image = global::Affinity11.Properties.Resources.check;
+            this.screengood.Location = new System.Drawing.Point(243, 48);
+            this.screengood.Name = "screengood";
+            this.screengood.Size = new System.Drawing.Size(25, 25);
+            this.screengood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.screengood.TabIndex = 39;
+            this.screengood.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(690, 653);
+            this.Controls.Add(this.lbl_screen);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.lbl_directx);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label16);
@@ -568,6 +617,8 @@ namespace Affinity11
             this.Controls.Add(this.directgood);
             this.Controls.Add(this.cpuinfo);
             this.Controls.Add(this.tpminfo);
+            this.Controls.Add(this.screenbad);
+            this.Controls.Add(this.screengood);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
@@ -581,7 +632,6 @@ namespace Affinity11
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.close)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cpuinfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bootbad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.freqbad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bootgood)).EndInit();
@@ -600,7 +650,10 @@ namespace Affinity11
             ((System.ComponentModel.ISupportInitialize)(this.tpmgood)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.directbad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.directgood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cpuinfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tpminfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.screenbad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.screengood)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -649,6 +702,10 @@ namespace Affinity11
         private System.Windows.Forms.PictureBox directgood;
         private System.Windows.Forms.PictureBox cpuinfo;
         private System.Windows.Forms.PictureBox tpminfo;
+        private System.Windows.Forms.Label lbl_screen;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox screenbad;
+        private System.Windows.Forms.PictureBox screengood;
     }
 }
 
