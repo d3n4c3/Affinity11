@@ -8,4 +8,6 @@ A windows 11 compatibility checker.
 
 **Add cpu version checks for hard check on cpu support list.**
 
+**Add readout at bottom for *compat good* or *compat bad*.**
+
 [Download exe here](https://github.com/mag-nif-i-cent/Affinity11/raw/master/Affinity11.exe)
