@@ -2,6 +2,8 @@
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Management;
+using System.Security.Principal;
+using System.Diagnostics;
 
 namespace Affinity11
 {
@@ -164,6 +166,30 @@ namespace Affinity11
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            bool bypassTPM = false;
+            WindowsPrincipal pricipal = new WindowsPrincipal(WindowsIdentity.GetCurrent());
+            bool hasAdministrativeRight = pricipal.IsInRole(WindowsBuiltInRole.Administrator);
+
+            if (!hasAdministrativeRight)
+            {
+                ProcessStartInfo startInfo = new ProcessStartInfo();
+                startInfo.UseShellExecute = true;
+                startInfo.WorkingDirectory = Environment.CurrentDirectory;
+                startInfo.FileName = Application.ExecutablePath;
+                startInfo.Verb = "runas";
+                try
+                {
+                    Process p = Process.Start(startInfo);
+                    Environment.Exit(-1);
+
+                }
+                catch (System.ComponentModel.Win32Exception ex)
+                {
+                    bypassTPM = true;
+                }
+
+            }
+
             Form2 LoadingForm = new Form2();
             LoadingForm.Show();
 
@@ -359,6 +385,17 @@ namespace Affinity11
                 directgood.Visible = true;
                 directbad.Visible = false;
             }
+
+            if (bypassTPM)
+            {
+                tpmgood.Visible = false;
+                tpmbad.Visible = true;
+                tpminfo.Visible = false;
+                lbl_tpm.Text = "Cannot get TPM info without admin privileges. Run as admin and try again.";
+                LoadingForm.Hide();
+            }
+            else
+            {
             LoadingForm.StatusText = "Getting TPM version...";
             ManagementScope scope = new ManagementScope("\\\\.\\ROOT\\CIMV2\\Security\\MicrosoftTpm");
             ObjectQuery query = new ObjectQuery("SELECT * FROM Win32_Tpm");
@@ -395,6 +432,7 @@ namespace Affinity11
                 tpmbad.Visible = true;
                 LoadingForm.StatusText = "Loading results...";
                 LoadingForm.Hide();
+            }
             }
 
 

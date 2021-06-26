@@ -31,7 +31,9 @@ namespace Affinity11
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.close = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,8 +51,6 @@ namespace Affinity11
             this.label16 = new System.Windows.Forms.Label();
             this.lbl_directx = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.close = new System.Windows.Forms.PictureBox();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.bootbad = new System.Windows.Forms.PictureBox();
             this.freqbad = new System.Windows.Forms.PictureBox();
             this.bootgood = new System.Windows.Forms.PictureBox();
@@ -114,6 +114,18 @@ namespace Affinity11
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
+            // close
+            // 
+            this.close.Image = global::Affinity11.Properties.Resources.power1;
+            this.close.Location = new System.Drawing.Point(645, 25);
+            this.close.Name = "close";
+            this.close.Size = new System.Drawing.Size(25, 25);
+            this.close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.close.TabIndex = 33;
+            this.close.TabStop = false;
+            this.close.Click += new System.EventHandler(this.close_Click);
+            this.close.MouseHover += new System.EventHandler(this.close_MouseHover);
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -124,6 +136,16 @@ namespace Affinity11
             this.label17.Size = new System.Drawing.Size(76, 21);
             this.label17.TabIndex = 32;
             this.label17.Text = "Affinity11";
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.Image = global::Affinity11.Properties.Resources.Icon;
+            this.pictureBox16.Location = new System.Drawing.Point(12, 10);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox16.TabIndex = 31;
+            this.pictureBox16.TabStop = false;
             // 
             // label1
             // 
@@ -296,28 +318,6 @@ namespace Affinity11
             this.label8.Size = new System.Drawing.Size(66, 21);
             this.label8.TabIndex = 32;
             this.label8.Text = "DirectX";
-            // 
-            // close
-            // 
-            this.close.Image = global::Affinity11.Properties.Resources.power1;
-            this.close.Location = new System.Drawing.Point(645, 25);
-            this.close.Name = "close";
-            this.close.Size = new System.Drawing.Size(25, 25);
-            this.close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.close.TabIndex = 33;
-            this.close.TabStop = false;
-            this.close.Click += new System.EventHandler(this.close_Click);
-            this.close.MouseHover += new System.EventHandler(this.close_MouseHover);
-            // 
-            // pictureBox16
-            // 
-            this.pictureBox16.Image = global::Affinity11.Properties.Resources.Icon;
-            this.pictureBox16.Location = new System.Drawing.Point(12, 10);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox16.TabIndex = 31;
-            this.pictureBox16.TabStop = false;
             // 
             // bootbad
             // 
@@ -626,6 +626,7 @@ namespace Affinity11
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.panel1.ResumeLayout(false);
