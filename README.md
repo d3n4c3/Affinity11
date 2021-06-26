@@ -3,7 +3,7 @@ A Windows 11 compatibility checker.
 
 ![icon](https://i.imgur.com/uS1HhtV.png)
 
-![screenshot](https://i.imgur.com/ahYUE73.png)
+![screenshot](https://i.imgur.com/g9FMsYI.png)
 
 # Releases
 
