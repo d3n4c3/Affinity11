@@ -364,9 +364,9 @@ namespace Affinity11
                 }
                 if (splitted[0].Contains("1.2"))
                 {
-                    tpminfo.Visible = true;
+                    tpminfo.Visible = false;
                     tpmgood.Visible = false;
-                    tpmbad.Visible = false;
+                    tpmbad.Visible = true;
                     LoadingForm.StatusText = "Loading results...";
                     LoadingForm.Hide();
                     return;
