@@ -167,6 +167,10 @@ namespace Affinity11
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Form2 LoadingForm = new Form2();
+            LoadingForm.Show();
+
+            LoadingForm.StatusText = "Checking system requirements...";
             if (isUEFI())
             {
                 lbl_type.Text = "UEFI";
@@ -179,6 +183,7 @@ namespace Affinity11
                 bootgood.Visible = false;
                 bootbad.Visible = true;
             }
+            LoadingForm.StatusText = "Checking CPU speed...";
             var clockspeed = ClockSpeed();
             lbl_clockspeed.Text = clockspeed + " MHz Frequency";
             int x = Int32.Parse(clockspeed);
@@ -193,7 +198,7 @@ namespace Affinity11
                 freqgood.Visible = false;
                 freqbad.Visible = true;
             }
-
+            LoadingForm.StatusText = "Getting core counts...";
             int coreCount = 0;
             foreach (var item in new System.Management.ManagementObjectSearcher("select * from Win32_Processor").Get())
             {
@@ -211,7 +216,7 @@ namespace Affinity11
                 coresgood.Visible = false;
                 coresbad.Visible = true;
             }
-
+            LoadingForm.StatusText = "Checking CPU Compatibility...";
             foreach (var item in new System.Management.ManagementObjectSearcher("select * from Win32_Processor").Get())
             {
                 lbl_cpu.Text = item["Name"].ToString();
@@ -259,7 +264,7 @@ namespace Affinity11
                 }
 
             }
-
+            LoadingForm.StatusText = "Checking Partition Types...";
             foreach (var item in new System.Management.ManagementObjectSearcher("select * from Win32_DiskPartition").Get())
             {
                 if (item["Type"].ToString().Contains("System"))
@@ -281,6 +286,7 @@ namespace Affinity11
             }
             long ram = 0;
             string ramstr = "";
+            LoadingForm.StatusText = "Checking RAM Compatibility...";
             foreach (var item in new System.Management.ManagementObjectSearcher("select * from Win32_PhysicalMemory").Get())
             {
                 ramstr = item["Capacity"].ToString();
@@ -304,7 +310,7 @@ namespace Affinity11
                     rambad.Visible = true;
                 }
             }
-
+            LoadingForm.StatusText = "Checking disk size...";
             foreach (var item in new System.Management.ManagementObjectSearcher("select * from Win32_DiskDrive").Get())
             {
                 string hddstr = item["Size"].ToString();
@@ -322,6 +328,7 @@ namespace Affinity11
                 }
 
             }
+            LoadingForm.StatusText = "Getting DirectX version...";
             lbl_directx.Text = "DirectX " + CheckDirectXMajorVersion();
             int directXver = CheckDirectXMajorVersion();
             if (directXver < 12)
@@ -334,7 +341,7 @@ namespace Affinity11
                 directgood.Visible = true;
                 directbad.Visible = false;
             }
-
+            LoadingForm.StatusText = "Getting TPM version...";
             ManagementScope scope = new ManagementScope("\\\\.\\ROOT\\CIMV2\\Security\\MicrosoftTpm");
             ObjectQuery query = new ObjectQuery("SELECT * FROM Win32_Tpm");
             ManagementObjectSearcher searcher =
@@ -351,6 +358,8 @@ namespace Affinity11
                     tpmgood.Visible = true;
                     tpmbad.Visible = false;
                     tpminfo.Visible = false;
+                    LoadingForm.StatusText = "Loading results...";
+                    LoadingForm.Hide();
                     return;
                 }
                 if (splitted[0].Contains("1.2"))
@@ -358,13 +367,16 @@ namespace Affinity11
                     tpminfo.Visible = true;
                     tpmgood.Visible = false;
                     tpmbad.Visible = false;
+                    LoadingForm.StatusText = "Loading results...";
+                    LoadingForm.Hide();
                     return;
                 }
 
                 tpmgood.Visible = false;
                 tpminfo.Visible = false;
                 tpmbad.Visible = true;
-
+                LoadingForm.StatusText = "Loading results...";
+                LoadingForm.Hide();
             }
 
 
