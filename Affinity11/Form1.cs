@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Xml;
 using System.IO;
 using System.Threading;
+using Microsoft.Win32;
 
 namespace Affinity11
 {
@@ -101,6 +102,21 @@ namespace Affinity11
             }
         }
 
+        public string SecureBootStatus()
+        {
+            int rc = 0;
+            string key = @"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecureBoot\State";
+            string subkey = @"UEFISecureBootEnabled";
+            try
+            {
+                object value = Registry.GetValue(key, subkey, rc);
+                if (value != null)
+                    rc = (int)value;
+            }
+            catch { }
+            return $@"{(rc >= 1 ? "ON" : "OFF")}";
+        }
+
         public string ClockSpeed()
         {
             string clockSpeed = "";
@@ -119,7 +135,31 @@ namespace Affinity11
             return (T)Convert.ChangeType(variant, typeof(T));
         }
 
-     
+        private long GetTotalFreeSpace(string driveName)
+        {
+            foreach (DriveInfo drive in DriveInfo.GetDrives())
+            {
+                if (drive.IsReady && drive.Name == driveName)
+                {
+                    return drive.AvailableFreeSpace;
+                }
+            }
+            return -1;
+        }
+
+        private long GetTotalSpace(string driveName)
+        {
+            foreach (DriveInfo drive in DriveInfo.GetDrives())
+            {
+                if (drive.IsReady && drive.Name == driveName)
+                {
+                    return drive.TotalSize;
+                }
+            }
+            return -1;
+        }
+
+
         public Form1()
         {
             InitializeComponent();
@@ -291,6 +331,19 @@ namespace Affinity11
 
                 }
             }
+            LoadingForm.StatusText = "Checking Secure Boot Status...";
+            lbl_secureboot.Text = SecureBootStatus();
+
+                    if (lbl_secureboot.Text.Contains("ON"))
+                    {
+                        securebootgood.Visible = true;
+                        securebootbad.Visible = false;
+                    }
+                    else
+                    {
+                        securebootgood.Visible = false;
+                        securebootbad.Visible = true;
+                    }
             long ram = 0;
             string ramstr = "";
             LoadingForm.StatusText = "Checking RAM Compatibility...";
@@ -318,12 +371,31 @@ namespace Affinity11
                 }
             }
             LoadingForm.StatusText = "Checking disk size...";
-            foreach (var item in new System.Management.ManagementObjectSearcher("select * from Win32_DiskDrive").Get())
-            {
-                string hddstr = item["Size"].ToString();
-                long drive = long.Parse(hddstr);
-                lbl_storage.Text = FormatBytes(drive).ToString();
-                if (drive >= 64)
+            var systemdrive = Path.GetPathRoot(Environment.GetFolderPath(Environment.SpecialFolder.System));
+
+                long systemfreespace = GetTotalFreeSpace(systemdrive);
+                string systemfreespacestr = FormatBytes(systemfreespace).Split(' ')[0];
+                Double systemfreespacedouble = Convert.ToDouble(systemfreespacestr);
+                lbl_freespace.Text = FormatBytes(systemfreespace).ToString();
+
+                if (systemfreespacedouble >= 64)
+                {
+                    freespacegood.Visible = true;
+                    freespaceinfo.Visible = false;
+                }
+                else
+                {
+                    freespacegood.Visible = false;
+                    freespaceinfo.Visible = true;
+                }
+
+
+                long systemtotalspace = GetTotalSpace(systemdrive);
+                string systemspacestr = FormatBytes(systemtotalspace).Split(' ')[0];
+                Double systemspacedouble = Convert.ToDouble(systemspacestr);
+                lbl_storage.Text = FormatBytes(systemtotalspace).ToString();
+
+                if (systemspacedouble >= 64)
                 {
                     hddgood.Visible = true;
                     hddbad.Visible = false;
@@ -334,7 +406,6 @@ namespace Affinity11
                     hddbad.Visible = true;
                 }
 
-            }
 
             LoadingForm.StatusText = "Getting DirectX && WDDM info...";
             Process.Start("dxdiag", "/x dxv.xml");
@@ -535,6 +606,19 @@ namespace Affinity11
         {
             ToolTip tt = new ToolTip();
             tt.SetToolTip(this.wddmbad, "Your Windows Display Driver Model version does not meet the minimum requirements for Windows 11.");
+        }
+
+        private void securebootbad_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.securebootbad, "Secure boot is disabled, or functionality is missing. This doesn't necessarily mean that your system doesn't support it. Check your motherboard, system manual, or bios for more information.");
+        }
+
+        private void freespaceinfo_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.freespaceinfo, "You don't have enough free space per the requirements, this doesn't mean you don't have enough total space. Just keep in mind Windows 11 requires at least 64GB of available space.");
+
         }
     }
 }

@@ -79,6 +79,14 @@ namespace Affinity11
             this.label10 = new System.Windows.Forms.Label();
             this.wddmbad = new System.Windows.Forms.PictureBox();
             this.wddmgood = new System.Windows.Forms.PictureBox();
+            this.lbl_freespace = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.freespaceinfo = new System.Windows.Forms.PictureBox();
+            this.freespacegood = new System.Windows.Forms.PictureBox();
+            this.lbl_secureboot = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.securebootgood = new System.Windows.Forms.PictureBox();
+            this.securebootbad = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.close)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
@@ -106,6 +114,10 @@ namespace Affinity11
             ((System.ComponentModel.ISupportInitialize)(this.screengood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wddmbad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wddmgood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.freespaceinfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.freespacegood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.securebootgood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.securebootbad)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -157,7 +169,7 @@ namespace Affinity11
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 15);
+            this.label1.Location = new System.Drawing.Point(15, 134);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 21);
             this.label1.TabIndex = 1;
@@ -167,7 +179,7 @@ namespace Affinity11
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 90);
+            this.label2.Location = new System.Drawing.Point(19, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 21);
             this.label2.TabIndex = 4;
@@ -217,7 +229,7 @@ namespace Affinity11
             // 
             this.lbl_type.AutoSize = true;
             this.lbl_type.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_type.Location = new System.Drawing.Point(47, 50);
+            this.lbl_type.Location = new System.Drawing.Point(47, 169);
             this.lbl_type.Name = "lbl_type";
             this.lbl_type.Size = new System.Drawing.Size(75, 21);
             this.lbl_type.TabIndex = 19;
@@ -227,7 +239,7 @@ namespace Affinity11
             // 
             this.lbl_cpu.AutoSize = true;
             this.lbl_cpu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_cpu.Location = new System.Drawing.Point(48, 121);
+            this.lbl_cpu.Location = new System.Drawing.Point(51, 50);
             this.lbl_cpu.Name = "lbl_cpu";
             this.lbl_cpu.Size = new System.Drawing.Size(75, 21);
             this.lbl_cpu.TabIndex = 20;
@@ -237,7 +249,7 @@ namespace Affinity11
             // 
             this.lbl_clockspeed.AutoSize = true;
             this.lbl_clockspeed.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_clockspeed.Location = new System.Drawing.Point(48, 163);
+            this.lbl_clockspeed.Location = new System.Drawing.Point(51, 92);
             this.lbl_clockspeed.Name = "lbl_clockspeed";
             this.lbl_clockspeed.Size = new System.Drawing.Size(75, 21);
             this.lbl_clockspeed.TabIndex = 22;
@@ -247,7 +259,7 @@ namespace Affinity11
             // 
             this.lbl_coresnthreads.AutoSize = true;
             this.lbl_coresnthreads.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_coresnthreads.Location = new System.Drawing.Point(271, 163);
+            this.lbl_coresnthreads.Location = new System.Drawing.Point(271, 92);
             this.lbl_coresnthreads.Name = "lbl_coresnthreads";
             this.lbl_coresnthreads.Size = new System.Drawing.Size(75, 21);
             this.lbl_coresnthreads.TabIndex = 25;
@@ -328,7 +340,7 @@ namespace Affinity11
             // bootbad
             // 
             this.bootbad.Image = global::Affinity11.Properties.Resources.x;
-            this.bootbad.Location = new System.Drawing.Point(19, 48);
+            this.bootbad.Location = new System.Drawing.Point(19, 167);
             this.bootbad.Name = "bootbad";
             this.bootbad.Size = new System.Drawing.Size(25, 25);
             this.bootbad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -339,7 +351,7 @@ namespace Affinity11
             // freqbad
             // 
             this.freqbad.Image = global::Affinity11.Properties.Resources.x;
-            this.freqbad.Location = new System.Drawing.Point(20, 161);
+            this.freqbad.Location = new System.Drawing.Point(23, 90);
             this.freqbad.Name = "freqbad";
             this.freqbad.Size = new System.Drawing.Size(25, 25);
             this.freqbad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -350,7 +362,7 @@ namespace Affinity11
             // bootgood
             // 
             this.bootgood.Image = global::Affinity11.Properties.Resources.check;
-            this.bootgood.Location = new System.Drawing.Point(19, 48);
+            this.bootgood.Location = new System.Drawing.Point(19, 167);
             this.bootgood.Name = "bootgood";
             this.bootgood.Size = new System.Drawing.Size(25, 25);
             this.bootgood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -360,7 +372,7 @@ namespace Affinity11
             // freqgood
             // 
             this.freqgood.Image = global::Affinity11.Properties.Resources.check;
-            this.freqgood.Location = new System.Drawing.Point(20, 161);
+            this.freqgood.Location = new System.Drawing.Point(23, 90);
             this.freqgood.Name = "freqgood";
             this.freqgood.Size = new System.Drawing.Size(25, 25);
             this.freqgood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -370,7 +382,7 @@ namespace Affinity11
             // coresbad
             // 
             this.coresbad.Image = global::Affinity11.Properties.Resources.x;
-            this.coresbad.Location = new System.Drawing.Point(243, 161);
+            this.coresbad.Location = new System.Drawing.Point(243, 90);
             this.coresbad.Name = "coresbad";
             this.coresbad.Size = new System.Drawing.Size(25, 25);
             this.coresbad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -381,7 +393,7 @@ namespace Affinity11
             // coresgood
             // 
             this.coresgood.Image = global::Affinity11.Properties.Resources.check;
-            this.coresgood.Location = new System.Drawing.Point(243, 161);
+            this.coresgood.Location = new System.Drawing.Point(243, 90);
             this.coresgood.Name = "coresgood";
             this.coresgood.Size = new System.Drawing.Size(25, 25);
             this.coresgood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -391,7 +403,7 @@ namespace Affinity11
             // cpubad
             // 
             this.cpubad.Image = global::Affinity11.Properties.Resources.x;
-            this.cpubad.Location = new System.Drawing.Point(20, 119);
+            this.cpubad.Location = new System.Drawing.Point(23, 48);
             this.cpubad.Name = "cpubad";
             this.cpubad.Size = new System.Drawing.Size(25, 25);
             this.cpubad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -402,7 +414,7 @@ namespace Affinity11
             // cpugood
             // 
             this.cpugood.Image = global::Affinity11.Properties.Resources.check;
-            this.cpugood.Location = new System.Drawing.Point(20, 119);
+            this.cpugood.Location = new System.Drawing.Point(23, 48);
             this.cpugood.Name = "cpugood";
             this.cpugood.Size = new System.Drawing.Size(25, 25);
             this.cpugood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -517,7 +529,7 @@ namespace Affinity11
             // cpuinfo
             // 
             this.cpuinfo.Image = global::Affinity11.Properties.Resources.info;
-            this.cpuinfo.Location = new System.Drawing.Point(20, 119);
+            this.cpuinfo.Location = new System.Drawing.Point(23, 48);
             this.cpuinfo.Name = "cpuinfo";
             this.cpuinfo.Size = new System.Drawing.Size(25, 25);
             this.cpuinfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -540,7 +552,7 @@ namespace Affinity11
             // 
             this.lbl_screen.AutoSize = true;
             this.lbl_screen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_screen.Location = new System.Drawing.Point(271, 50);
+            this.lbl_screen.Location = new System.Drawing.Point(271, 319);
             this.lbl_screen.Name = "lbl_screen";
             this.lbl_screen.Size = new System.Drawing.Size(75, 21);
             this.lbl_screen.TabIndex = 41;
@@ -550,7 +562,7 @@ namespace Affinity11
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(239, 15);
+            this.label9.Location = new System.Drawing.Point(239, 284);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(107, 21);
             this.label9.TabIndex = 38;
@@ -559,7 +571,7 @@ namespace Affinity11
             // screenbad
             // 
             this.screenbad.Image = global::Affinity11.Properties.Resources.x;
-            this.screenbad.Location = new System.Drawing.Point(243, 48);
+            this.screenbad.Location = new System.Drawing.Point(243, 317);
             this.screenbad.Name = "screenbad";
             this.screenbad.Size = new System.Drawing.Size(25, 25);
             this.screenbad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -570,7 +582,7 @@ namespace Affinity11
             // screengood
             // 
             this.screengood.Image = global::Affinity11.Properties.Resources.check;
-            this.screengood.Location = new System.Drawing.Point(243, 48);
+            this.screengood.Location = new System.Drawing.Point(243, 317);
             this.screengood.Name = "screengood";
             this.screengood.Size = new System.Drawing.Size(25, 25);
             this.screengood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -618,12 +630,99 @@ namespace Affinity11
             this.wddmgood.TabIndex = 43;
             this.wddmgood.TabStop = false;
             // 
+            // lbl_freespace
+            // 
+            this.lbl_freespace.AutoSize = true;
+            this.lbl_freespace.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_freespace.Location = new System.Drawing.Point(271, 388);
+            this.lbl_freespace.Name = "lbl_freespace";
+            this.lbl_freespace.Size = new System.Drawing.Size(75, 21);
+            this.lbl_freespace.TabIndex = 49;
+            this.lbl_freespace.Text = "Loading...";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(239, 356);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(91, 21);
+            this.label11.TabIndex = 46;
+            this.label11.Text = "Free Space";
+            // 
+            // freespaceinfo
+            // 
+            this.freespaceinfo.Image = global::Affinity11.Properties.Resources.info;
+            this.freespaceinfo.Location = new System.Drawing.Point(243, 386);
+            this.freespaceinfo.Name = "freespaceinfo";
+            this.freespaceinfo.Size = new System.Drawing.Size(25, 25);
+            this.freespaceinfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.freespaceinfo.TabIndex = 48;
+            this.freespaceinfo.TabStop = false;
+            this.freespaceinfo.MouseHover += new System.EventHandler(this.freespaceinfo_MouseHover);
+            // 
+            // freespacegood
+            // 
+            this.freespacegood.Image = global::Affinity11.Properties.Resources.check;
+            this.freespacegood.Location = new System.Drawing.Point(243, 386);
+            this.freespacegood.Name = "freespacegood";
+            this.freespacegood.Size = new System.Drawing.Size(25, 25);
+            this.freespacegood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.freespacegood.TabIndex = 47;
+            this.freespacegood.TabStop = false;
+            // 
+            // lbl_secureboot
+            // 
+            this.lbl_secureboot.AutoSize = true;
+            this.lbl_secureboot.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_secureboot.Location = new System.Drawing.Point(271, 169);
+            this.lbl_secureboot.Name = "lbl_secureboot";
+            this.lbl_secureboot.Size = new System.Drawing.Size(75, 21);
+            this.lbl_secureboot.TabIndex = 53;
+            this.lbl_secureboot.Text = "Loading...";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(239, 134);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(101, 21);
+            this.label12.TabIndex = 50;
+            this.label12.Text = "Secure Boot";
+            // 
+            // securebootgood
+            // 
+            this.securebootgood.Image = global::Affinity11.Properties.Resources.check;
+            this.securebootgood.Location = new System.Drawing.Point(243, 167);
+            this.securebootgood.Name = "securebootgood";
+            this.securebootgood.Size = new System.Drawing.Size(25, 25);
+            this.securebootgood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.securebootgood.TabIndex = 51;
+            this.securebootgood.TabStop = false;
+            // 
+            // securebootbad
+            // 
+            this.securebootbad.Image = global::Affinity11.Properties.Resources.x;
+            this.securebootbad.Location = new System.Drawing.Point(243, 167);
+            this.securebootbad.Name = "securebootbad";
+            this.securebootbad.Size = new System.Drawing.Size(25, 25);
+            this.securebootbad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.securebootbad.TabIndex = 52;
+            this.securebootbad.TabStop = false;
+            this.securebootbad.MouseHover += new System.EventHandler(this.securebootbad_MouseHover);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(690, 653);
+            this.Controls.Add(this.lbl_secureboot);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.securebootbad);
+            this.Controls.Add(this.lbl_freespace);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.lbl_wddm);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.lbl_screen);
@@ -670,6 +769,9 @@ namespace Affinity11
             this.Controls.Add(this.screengood);
             this.Controls.Add(this.wddmbad);
             this.Controls.Add(this.wddmgood);
+            this.Controls.Add(this.freespaceinfo);
+            this.Controls.Add(this.freespacegood);
+            this.Controls.Add(this.securebootgood);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
@@ -708,6 +810,10 @@ namespace Affinity11
             ((System.ComponentModel.ISupportInitialize)(this.screengood)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wddmbad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wddmgood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.freespaceinfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.freespacegood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.securebootgood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.securebootbad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -764,6 +870,14 @@ namespace Affinity11
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox wddmbad;
         private System.Windows.Forms.PictureBox wddmgood;
+        private System.Windows.Forms.Label lbl_freespace;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox freespaceinfo;
+        private System.Windows.Forms.PictureBox freespacegood;
+        private System.Windows.Forms.Label lbl_secureboot;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.PictureBox securebootgood;
+        private System.Windows.Forms.PictureBox securebootbad;
     }
 }
 
