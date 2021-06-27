@@ -75,6 +75,10 @@ namespace Affinity11
             this.label9 = new System.Windows.Forms.Label();
             this.screenbad = new System.Windows.Forms.PictureBox();
             this.screengood = new System.Windows.Forms.PictureBox();
+            this.lbl_wddm = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.wddmbad = new System.Windows.Forms.PictureBox();
+            this.wddmgood = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.close)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
@@ -100,6 +104,8 @@ namespace Affinity11
             ((System.ComponentModel.ISupportInitialize)(this.tpminfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.screenbad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.screengood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wddmbad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wddmgood)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -571,12 +577,55 @@ namespace Affinity11
             this.screengood.TabIndex = 39;
             this.screengood.TabStop = false;
             // 
+            // lbl_wddm
+            // 
+            this.lbl_wddm.AutoSize = true;
+            this.lbl_wddm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_wddm.Location = new System.Drawing.Point(271, 539);
+            this.lbl_wddm.Name = "lbl_wddm";
+            this.lbl_wddm.Size = new System.Drawing.Size(75, 21);
+            this.lbl_wddm.TabIndex = 45;
+            this.lbl_wddm.Text = "Loading...";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(239, 506);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 21);
+            this.label10.TabIndex = 42;
+            this.label10.Text = "WDDM";
+            // 
+            // wddmbad
+            // 
+            this.wddmbad.Image = global::Affinity11.Properties.Resources.x;
+            this.wddmbad.Location = new System.Drawing.Point(243, 536);
+            this.wddmbad.Name = "wddmbad";
+            this.wddmbad.Size = new System.Drawing.Size(25, 25);
+            this.wddmbad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.wddmbad.TabIndex = 44;
+            this.wddmbad.TabStop = false;
+            this.wddmbad.MouseHover += new System.EventHandler(this.wddmbad_MouseHover);
+            // 
+            // wddmgood
+            // 
+            this.wddmgood.Image = global::Affinity11.Properties.Resources.check;
+            this.wddmgood.Location = new System.Drawing.Point(243, 536);
+            this.wddmgood.Name = "wddmgood";
+            this.wddmgood.Size = new System.Drawing.Size(25, 25);
+            this.wddmgood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.wddmgood.TabIndex = 43;
+            this.wddmgood.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(690, 653);
+            this.Controls.Add(this.lbl_wddm);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.lbl_screen);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.lbl_directx);
@@ -619,6 +668,8 @@ namespace Affinity11
             this.Controls.Add(this.tpminfo);
             this.Controls.Add(this.screenbad);
             this.Controls.Add(this.screengood);
+            this.Controls.Add(this.wddmbad);
+            this.Controls.Add(this.wddmgood);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
@@ -655,6 +706,8 @@ namespace Affinity11
             ((System.ComponentModel.ISupportInitialize)(this.tpminfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.screenbad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.screengood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wddmbad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wddmgood)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -707,6 +760,10 @@ namespace Affinity11
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox screenbad;
         private System.Windows.Forms.PictureBox screengood;
+        private System.Windows.Forms.Label lbl_wddm;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.PictureBox wddmbad;
+        private System.Windows.Forms.PictureBox wddmgood;
     }
 }
 

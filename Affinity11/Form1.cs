@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 using System.Management;
 using System.Security.Principal;
 using System.Diagnostics;
+using System.Xml;
+using System.IO;
+using System.Threading;
 
 namespace Affinity11
 {
@@ -116,53 +119,13 @@ namespace Affinity11
             return (T)Convert.ChangeType(variant, typeof(T));
         }
 
-        public static int CheckDirectXMajorVersion()
-        {
-            IDxDiagProvider provider = null;
-            IDxDiagContainer rootContainer = null;
-            IDxDiagContainer systemInfoContainer = null;
-            try
-            {
-                // Instantiate and initialize the provider.
-                provider = (IDxDiagProvider)new DxDiagProvider();
-                DXDIAG_INIT_PARAMS initParams = new DXDIAG_INIT_PARAMS
-                {
-                    dwSize = Marshal.SizeOf<DXDIAG_INIT_PARAMS>(),
-                    dwDxDiagHeaderVersion = 111
-                };
-                provider.Initialize(ref initParams);
-
-                // Get the Root\SystemInfo container.
-                provider.GetRootContainer(out rootContainer);
-                rootContainer.GetChildContainer("DxDiag_SystemInfo", out systemInfoContainer);
-
-                // Read the DirectX version info.
-                int versionMajor = GetProperty<int>(systemInfoContainer, "dwDirectXVersionMajor");
-                int versionMinor = GetProperty<int>(systemInfoContainer, "dwDirectXVersionMinor");
-                string versionLetter = GetProperty<string>(systemInfoContainer, "szDirectXVersionLetter");
-                bool isDebug = GetProperty<bool>(systemInfoContainer, "bDebug");
-                return versionMajor;
-            }
-            finally
-            {
-                if (provider != null)
-                    Marshal.ReleaseComObject(provider);
-                if (rootContainer != null)
-                    Marshal.ReleaseComObject(rootContainer);
-                if (systemInfoContainer != null)
-                    Marshal.ReleaseComObject(systemInfoContainer);
-            }
-
-        }
-
-
-
-
+     
         public Form1()
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
         }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -372,9 +335,22 @@ namespace Affinity11
                 }
 
             }
-            LoadingForm.StatusText = "Getting DirectX version...";
-            lbl_directx.Text = "DirectX " + CheckDirectXMajorVersion();
-            int directXver = CheckDirectXMajorVersion();
+
+            LoadingForm.StatusText = "Getting DirectX && WDDM info...";
+            Process.Start("dxdiag", "/x dxv.xml");
+            while (!File.Exists("dxv.xml"))
+                Thread.Sleep(1000);
+
+            XmlDocument doc = new XmlDocument();
+            doc.Load("dxv.xml");
+            XmlNode dxd = doc.SelectSingleNode("//DxDiag");
+            XmlNode dxv = dxd.SelectSingleNode("//DirectXVersion");
+            XmlNode wddmv = dxd.SelectSingleNode("//DriverModel");
+            Double directXver = Convert.ToDouble(dxv.InnerText.Split(' ')[1]);
+            Double wver = Convert.ToDouble(wddmv.InnerText.Split(' ')[1]);
+            lbl_directx.Text = "DirectX " + directXver;
+            lbl_wddm.Text = "Version: " + wver;
+
             if (directXver < 12)
             {
                 directgood.Visible = false;
@@ -384,6 +360,12 @@ namespace Affinity11
             {
                 directgood.Visible = true;
                 directbad.Visible = false;
+            }
+
+            if (wver >= 2)
+            {
+                wddmbad.Visible = false;
+                wddmgood.Visible = true;
             }
 
             if (bypassTPM)
@@ -547,6 +529,12 @@ namespace Affinity11
             ToolTip tt = new ToolTip();
             tt.SetToolTip(this.screenbad, "One or more of your monitors are too small to work on Windows 11.");
 
+        }
+
+        private void wddmbad_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.wddmbad, "Your Windows Display Driver Model version does not meet the minimum requirements for Windows 11.");
         }
     }
 }
